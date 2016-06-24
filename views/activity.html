@@ -1,8 +1,7 @@
 <div class="wrapper-activity">
     <div class="wrapper-map" ng-controller="MapCtrl as mc">
         <ui-gmap-google-map center="mapActivity.center" zoom="mapActivity.zoom" control="mapActivity.control">
-            <!--<ui-gmap-search-box template="searchbox.template" events="searchbox.events"></ui-gmap-search-box>-->
-            <ui-gmap-markers models="lastMarkers" ng-repeat="n in lastMarkers" coords="'self'" events="'self'" click="onClick()">
+            <ui-gmap-markers models="lastMarkers" coords="'self'" click="onClick()">
                 <ui-gmap-windows  show="show">
                     <div ng-non-bindable>{{title}}</div>
                 </ui-gmap-windows>

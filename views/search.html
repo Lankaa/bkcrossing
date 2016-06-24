@@ -7,7 +7,7 @@
             <input type="text" class="search-form__item" placeholder="ISBN" ng-model="search.isbn"><br>
             <input type="text" class="search-form__item" placeholder="Название" ng-model="search.name" ><br>
             <input type="text" class="search-form__item" placeholder="Автор" ng-model="search.writer"><br>
-            <select class="search-form__item_select" ng-model="search.genre">
+            <select class="search-form__item_select" ng-model="search.genre" ng-controller="ChooseCtrl as cc">
                 <option value="" selected disabled>Жанр</option>
                 <option ng-repeat="(key, value) in genre track by $index" >{{value}}</option>
             </select><br>

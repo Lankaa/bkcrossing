@@ -27,8 +27,7 @@ function BookCtrl($scope, $interval, QueryFactory, $timeout) {
     $scope.myShelf = { 'token': localStorage.token };
     $scope.releasingBook = {};
     $scope.takeBook = {};
-
-
+    
     //      ADD NEW BOOKS
     function addNewBook() {
         var url = 'http://api.bkcrossing.tk/v1/book/add';
@@ -145,8 +144,9 @@ function BookCtrl($scope, $interval, QueryFactory, $timeout) {
     }
     
     function parseMarker(book) {
+        console.log(book);
         return {
-            id: Date.now(),
+            id: book.idb,
             title: book.name,
             latitude: book.coords.lat,
             longitude: book.coords.lon

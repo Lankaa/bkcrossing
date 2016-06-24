@@ -1,9 +1,17 @@
 angular
 .module('app')
-    .config(mapConfig)
+    .config(mapActConfig)
+    .config(mapWorkConfig)
     .controller('MapCtrl', ['$scope','uiGmapIsReady', MapCtrl]);
 
-function mapConfig(uiGmapGoogleMapApiProvider) {
+function mapActConfig(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyC-oU23c5cX9AgO1UDvpD_SHZ84q9rFjLU',
+        v: '3.24', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
+}
+function mapWorkConfig(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyC-oU23c5cX9AgO1UDvpD_SHZ84q9rFjLU',
         v: '3.24', //defaults to latest 3.X anyhow
@@ -20,14 +28,22 @@ function MapCtrl($scope, uiGmapIsReady) {
     mc.close = false;
 
     uiGmapIsReady.promise(1).then(function (instances) {
+        instances.forEach(function(inst) {
+            var map = inst.map;
+            console.log(map);
+            var uuid = map.uiGmap_id;
+            console.log(uuid);
+            var mapInstanceNumber = inst.instance; // Starts at 1.
+            console.log(mapInstanceNumber);
+        });
     });
 
     $scope.limitMarker = true;
 
     $scope.mapWork = {
         center : {
-            latitude: 61.5240, /*широта*/
-            longitude: 105.3188 /*долгота*/
+            latitude: 47.234489635299184, /*широта*/
+            longitude: 39.69635009765625 /*долгота*/
         },
         zoom : 5,
         markers: [],
@@ -62,10 +78,6 @@ function MapCtrl($scope, uiGmapIsReady) {
         }
     };
 
-    uiGmapIsReady.promise(1).then(function (instances) {
-        $scope.mapActivity = instances[0].map;
-    });
-
     $scope.mapActivity = {
         center : {
             latitude: 61.5240, /*широта*/
@@ -74,7 +86,6 @@ function MapCtrl($scope, uiGmapIsReady) {
         zoom : 4,
         markers: $scope.lastMarkers,
         control: {}
-        
     };
 
     // $timeout(function () {},0);
