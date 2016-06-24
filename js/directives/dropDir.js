@@ -10,7 +10,7 @@ angular
     function dropDown() {
         return {
             restrict: "E",
-            templateUrl: "../newDesign/dropdown.html",
+            templateUrl: "dropdown.html",
             scope: {
                 signOut: '&',
                 name: '=',

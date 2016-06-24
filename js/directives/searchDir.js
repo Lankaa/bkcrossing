@@ -5,7 +5,7 @@ angular
 function search() {
     return {
         restrict: 'E',
-        templateUrl: '../newDesign/search.html',
+        templateUrl: 'search.html',
         scope: {
             $state: '='
             // searchSimple: '&'
