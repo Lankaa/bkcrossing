@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Zantroke';
+    src: local('Zantroke'), url('../fonts/zantroke/zantroke.woff2') format('woff2'), url('../../newDesign/fonts/zantroke/zantroke.woff') format('woff'), url('../../newDesign/fonts/zantroke/zantroke.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}

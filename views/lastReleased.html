@@ -1,0 +1,18 @@
+<div class="wrapper_bookshelf" ng-repeat="b in bookInfo">
+    <div class="container__img">
+        <img src="images/logo.png" class="img_book">
+    </div>
+    <div class="wrap_shelf">
+        <div class="bookshelf__info">
+            <span class="info_title" ng-model="b">idb: <span>{{b.IDB}}</span></span><br>
+            <span class="info_title" ng-model="b">Название: <span>{{b.name}}</span></span><br>
+            <span class="info_title" ng-model="b">Автор: <span>{{b.writer}}</span></span><br>
+            <span class="info_title" ng-model="b">Жанр: <span>{{b.genre}}</span></span><br>
+            <span class="info_title" ng-model="b">Город: <span>{{b.city}}</span></span><br>
+            <span class="info_title" ng-model="b">Статус: <span>{{b.status}}</span></span>
+        </div>
+        <div class="bookshelf__btn">
+            <button class="btn_release" ng-click="bc.take();">Взять книгу</button>
+        </div>
+    </div>
+</div>

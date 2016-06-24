@@ -1,0 +1,180 @@
+@import "var.less";
+
+.wrapper-home {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  .wrapper-slogan {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    &.slide-up-up,
+    &.slide-in-up {
+      animation: .5s slide-up-slogan;
+      top: 10%;
+    }
+    &.slide-up-up-remove,
+    &.slide-in-up-remove {
+      animation: .5s slide-down-slogan;
+      top: 40%;
+    }
+    &__slogan {
+      display: flex;
+      justify-content: center;
+      font-size: 65px;
+      color: @white;
+      font-family: @roboto;
+      //border-bottom: 1px solid @white;
+    }
+    .wrapper-sign {
+      display: flex;
+      justify-content: center;
+      &.hide-up,
+      &.hide-in {
+        display: block!important;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      &__btn-sign {
+        width: 160px;
+        height: 40px;
+        background: transparent;
+        color: @white;
+        font-size: 19px;
+        border: 1px solid @white;
+        align-items: center;
+        border-radius: 5px;
+        margin: 15px 20px;
+        cursor: pointer;
+        &:hover {
+          background: rgba(0, 0, 0, 0.44);
+          transition: all .3s linear;
+        }
+      }
+    }
+  }
+  .signup {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
+    opacity: 1;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    animation: .5s slide-up-sign;
+    transform: translate3d(0,0,0);
+    &.ng-hide {
+      animation: 0.4s slide-down-sign;
+    }
+  }
+
+  .signin {
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    opacity: 1;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    animation: .5s slide-up-sign;
+    transform: translate3d(0,0,0);
+    &.ng-hide {
+      animation: 0.4s slide-down-sign;
+    }
+  }
+}
+
+.why-signup {
+  width: 550px;
+  align-self: center;
+  color: @white;
+  font-size: 24px;
+  font-family: @comfortaa;
+  text-align: justify;
+  text-indent: 50px;
+}
+.wrapper-form {
+  overflow: hidden;
+  width: 310px;
+  .wrapper-topic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__title {
+      font-family: @theano-didot;
+      color: @white;
+    }
+    &__close {
+      color: @blue;
+      cursor: pointer;
+      margin-right: 30px;
+    }
+  }
+  .line {
+    width: @width-form;
+  }
+  .sign-form {
+    .sign-form__item {
+      margin: 8px 0;
+      width: @width-form;
+      border: none;
+      font-size: 15px;
+      outline-color: @blue;
+      background: rgba(255, 255, 255, 0.8);
+    }
+    .sign-form__item,
+    .sign-form__btn {
+      height: 40px;
+      box-sizing: border-box;
+      padding: 0 5px;
+    }
+    //кнопка регистрации и авторизации
+    .sign-form__btn {
+      border: 1px solid @white;
+      background: transparent;
+      color: @white;
+      margin: 5px 0;
+      font-family: @comfortaa;
+      height: 30px;
+      border-radius: 4px;
+      outline: none;
+      width: @width-form;
+      font-size: 16px;
+      outline: none;
+      &:hover {
+        transition: all .1s linear;
+        background: @blue;
+        border: none;
+      }
+    }
+  }
+}
+
+@keyframes slide-up-sign {
+  0%   {top:100%;}
+  100%  {top:25%;}
+}
+
+@keyframes slide-down-sign {
+  0%   {top:25%;}
+  100%  {top:140%;}
+}
+
+@keyframes slide-up-slogan {
+  0%   {top:40%;}
+  100%  {top: 10%;}
+}
+@keyframes slide-down-slogan {
+  0%   {top:10%;}
+  100%  {top: 40%;}
+}

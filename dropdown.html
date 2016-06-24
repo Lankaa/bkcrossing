@@ -1,0 +1,19 @@
+<div class="dropdown-container" ng-class="{ show: listVisible }">
+    <div class="dropdown-display" ng-click="show();" ng-class="{clicked: listVisible, index: $state.is('index')}">
+        <span class="dropdown__title" ng-class="{white: $state.is('index')}">{{name}} <i class="fa fa-caret-down" aria-hidden="true"></i></span>
+    </div>
+    <div class="dropdown-list">
+        <div class="wrapper-dropdown">
+
+            <div class="container-droplist">
+                <a ui-sref="update" class="links">Редактировать</a>
+            </div>
+            <div class="container-droplist">
+                <a ui-sref="my" class="links">Моя полка</a>
+            </div>
+            <div class="container-droplist">
+                <a ng-click='signOut();' class="links">Выход</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+//@dark-brown: #2E282A;
+//@blue: #17BEBC;
+//@orange: #CD5334;
+//@light-orange: #EDB88B;
+//@light-pink: #FAD8D6;
+@white: #FFF;
+@red: #f00;
+@black: #000;
+@darkest-blue: #00171F;
+@dark-blue: #003459;
+@blue: #007EA7;
+@light-blue: #00A8E7;
+@width-form: 275px;
+
+@zantroke: 'Zantroke';
+@roboto: 'Roboto';
+@comfortaa: 'Comfortaa';
+@djsans: 'DejaVu Sans';
+@comfortaa-bold: 'Comfortaa Bold';
+@theano-didot: 'Theano Didot Regular';
+
+
+@height: 30px;
+@spacing: 5px;
+@placeholder-colour: #AAA;
+@select-colour: #2875C7;
+@font-size: 14px;
+@border-colour: #DDD;
+
+
+.transition (@value1,@value2:X,...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  transition: @value; }
+.transform (@value1,@value2:X,...) {
+  @value: ~`"@{arguments}".replace(/[\[\]]|\,\sX/g, '')`;
+  transform:@value; }

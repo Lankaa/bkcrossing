@@ -1,0 +1,53 @@
+<div class="wrapper-home">
+    <div class="wrapper-slogan" ng-class="{'slide-up-up': uc.switchUp, 'slide-in-up': uc.switchIn}">
+        <span class="wrapper-slogan__slogan">Отпусти книгу на свободу</span>
+        <div class="wrapper-sign" ng-class="{'hide-up': uc.switchUp, 'hide-in': uc.switchIn}" ng-hide="name">
+            <button class="wrapper-sign__btn-sign" ng-click="uc.switchIn = !uc.switchIn">Вход</button>
+            <button class="wrapper-sign__btn-sign" ng-click="uc.switchUp = !uc.switchUp">Регистрация</button>
+        </div>
+    </div>
+
+    <div class="signup" ng-show="uc.switchUp == true">
+        <div class="wrapper-form">
+            <div class="success" ng-bind="suc" ng-show="suc"></div>
+            <div class="messages" ng-bind="mes" ng-show="mes"></div>
+            <div class="wrapper-topic">
+                <h2 class="wrapper-topic__title">Регистрация</h2>
+                <i class="fa fa-times fa-2x wrapper-topic__close" aria-hidden="true" ng-click="uc.switchUp = false"></i>
+            </div>
+            <hr class="line">
+            <form name="registration" class="sign-form" ng-submit="uc.reg()">
+                <input class="sign-form__item" type="text" ng-model="user.lastName" maxlength="30" placeholder="Фамилия"><br>
+                <input class="sign-form__item" type="text" ng-model="user.firstName" maxlength="30" placeholder="Имя"><br>
+                <label class="required"><input class="sign-form__item" type="text" ng-model="user.city" maxlength="30" placeholder="Ваш город" required> *</label><br>
+                <label class="required"><input class="sign-form__item" type="text" ng-model="user.login" maxlength="30" placeholder="Логин" required> *</label><br>
+                <label class="required"><input class="sign-form__item" type="email" ng-model="user.email" maxlength="30" placeholder="E-mail" required> *</label><br>
+                <label class="required"><input class="sign-form__item" name="password" type="password" ng-model="user.password" maxlength="30" placeholder="Пароль" ng-minlength="6" required> *</label>
+                <span class="error" ng-show="registration.password.$error.minlength">Недостаточно символов</span><br>
+                <label class="required"><input class="sign-form__item" type="password" ng-model="password1.smth" maxlength="30" placeholder="Повторите пароль" required> *</label>
+                <span class="error" ng-show="user.password!=password1.smth">Пароли не совпадают</span><br>
+                <button class="sign-form__btn" type="submit" name="submit" ng-disabled="user.password!=password1.smth">Зарегистрироваться</button><br>
+            </form>
+        </div>
+        <span class="why-signup">
+            Сервис предоставляет возможность пользоваться его функционалом анонимно. Вы конечно можете не регистрироваться, это сугубо Ваше дело,
+            но есть некоторые плюшки при регистрации с которыми Вам будет удобнее работать с сервисом.
+            Мы рады, что Вы не с нами.
+        </span>
+    </div>
+    <div class="signin" ng-show="uc.switchIn">
+        <div class="wrapper-form">
+            <div class="messages" ng-bind="errLogin" ng-show="errLogin"></div>
+            <div class="wrapper-topic">
+                <h2 class="wrapper-topic__title">Вход</h2>
+                <i class="fa fa-times fa-2x wrapper-topic__close" aria-hidden="true" ng-click="uc.switchIn = false"></i>
+            </div>
+            <hr class="line">
+            <form name="signin" class="sign-form" ng-submit="uc.login()">
+                <input class="sign-form__item" type="text" ng-model="sign.login" maxlength="30" placeholder="Логин" required><br>
+                <input class="sign-form__item" name="password" type="password" ng-model="sign.password" maxlength="30" placeholder="Пароль" ng-minlength="6" required><br>
+                <button class="sign-form__btn" type="submit" name="submit">Войти</button><br>
+            </form>
+        </div>
+    </div>
+</div>

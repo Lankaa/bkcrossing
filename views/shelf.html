@@ -1,0 +1,24 @@
+<div class="wrapper-shelf">
+    <div class="wrapper-topic_shelf">
+        <span class="wrapper-topic_shelf__caption">Мои книги</span>
+    </div>
+    <div class="container-shelf">
+        <div class="wrapper-shelf_my" ng-repeat="m in myBookInfo">
+            <div class="cover-container">
+                <img class="cover-container__cover" src="../newDesign/images/book_icon.png">
+            </div>
+            <div class="wrapper-info_shelf">
+                <div class="wrapper-info_shelf__title">Название: </div><span class="wrapper-info_shelf__item" ng-bind="m.name"></span><br>
+                <div class="wrapper-info_shelf__title">Автор: </div><span class="wrapper-info_shelf__item" ng-bind="m.writer"></span><br>
+                <div class="wrapper-info_shelf__title">Жанр: </div><span class="wrapper-info_shelf__item" ng-bind="m.genre"></span><br>
+                <div class="wrapper-info_shelf__title">Язык: </div><span class="wrapper-info_shelf__item" ng-bind="m.language"></span><br>
+                <div class="wrapper-info_shelf__title">Описание: </div><span class="wrapper-info_shelf__item" ng-bind="m.descript"></span><br>
+                <div class="wrapper-info_shelf__title">Статус: </div><span class="wrapper-info_shelf__item" ng-bind="m.status"></span>
+            </div>
+            <!--<div class="wrapper-btn_shelf">
+                <button class="wrapper-btn_shelf__act" ng-click="bc.release(m.idb);">Отпустить книгу</button>
+                <button class="wrapper-btn_shelf__act" ng-click="bc.take(m.idb);">Взять книгу</button>
+            </div>-->
+        </div>
+    </div>
+</div>

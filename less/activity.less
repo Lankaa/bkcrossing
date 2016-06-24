@@ -1,0 +1,116 @@
+@import "var.less";
+
+.wrapper-activity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 1440px;
+
+  position: relative;
+  height: 100%;
+  .wrapper-map{
+    width: 70%;
+    display: flex;
+    align-items: baseline;
+    .angular-google-map-container {
+      height: 600px;
+      width: 70%;
+      position: absolute;
+      overflow: hidden;
+    }
+    .middle {
+      width: 70%;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .container{
+      width: 70%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .wrapper-last {
+    width: 30%;
+    height: 550px;
+    //background: @white;
+    padding-bottom: 10%;
+    .wrapper-topic {
+      display: flex;
+      background: @darkest-blue;
+      height: 55px;
+      &__caption {
+        margin: auto;
+        color: @white;
+        text-align: center;
+        font-size: 18px;
+        font-family: @roboto;
+      }
+    }
+    .container-released {
+      height: 100%;
+      overflow-y: scroll;
+      .wrapper-released {
+        display: flex;
+        flex-direction: row;
+        border-bottom: 1px solid lightgrey;
+        align-items: center;
+        background: @white;
+        .img-container {
+          width: 50px;
+          height: 50px;
+          padding: 10px 20px 10px 10px;
+          &__book {
+            width: 50px;
+            height: 50px;
+
+          }
+        }
+        .wrapper-info {
+          width: 190px;
+          &__title {
+            font-weight: 500;
+            font-family: @roboto;
+          }
+          &__item {
+            font-family: @roboto;
+          }
+        }
+        .btn-container {
+          padding: 0 5px;
+          &__take {
+            border: 1px solid;
+            outline: none;
+            background: transparent;
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+              background: @darkest-blue;
+              color: @white;
+              transition: all .3s linear;
+            }
+          }
+        }
+      }
+    }
+
+  }
+  .wrapper-alert {
+    display: flex;
+    width: 300px;
+    height: 60px;
+    background: @light-blue;
+    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+    .alert {
+      margin: auto;
+      font-size: 20px;
+      font-family: @roboto;
+    }
+  }
+}

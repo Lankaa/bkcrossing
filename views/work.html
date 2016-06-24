@@ -1,0 +1,60 @@
+<div class="wrapper-work">
+    <div class="wrapper-form_work">
+        <div class="wrapper-form_work__topic">Добавление новой книги</div>
+        <div class="success" ng-show="sucAdd">Книга успешно добавлена, idb: {{sucAdd}}</div>
+        <div class="messages" ng-show="errAdd">{{errAdd}}</div>
+        <form class="form-work" ng-submit="bc.addNewBook();">
+            <input type="text" class="form-work__item" ng-model="add.isbn" placeholder="ISBN"><br>
+            <input type="text" class="form-work__item" ng-model="add.name" placeholder="Название" required><div class="required req-area">*</div><br>
+            <input type="text" class="form-work__item" ng-model="add.writer" placeholder="Автор" required><div class="required req-area">*</div><br>
+            <select class="form-work__item_select" ng-model="add.genre"  required >
+                <option value="" disabled selected>Жанр</option>
+                <option ng-repeat="(key, value) in genre track by $index">{{value}}</option>
+        </select><div class="required req-area">*</div><br>
+            <input type="text" class="form-work__item" ng-model="add.language" placeholder="Язык"><br>
+            <textarea class="form-work__item_area" ng-model="add.descript" maxlength="300" placeholder="Описание книги" required>
+            </textarea><div class="required req-area">*</div><br>
+            <button type="submit" class="form-work__btn">Добавить книгу</button>
+        </form>
+    </div><!--.wrapper-form_work-->
+
+    <div class="wrap-in-wrapper-work" >
+        <div class="wrapper-form_work" ng-controller="MapCtrl as mc">
+            <div class="wrapper-form_work__topic">Отпустить книгу</div>
+            <div class="success" ng-show="sucRel">{{sucRel}}</div>
+            <div class="messages" ng-show="errRel">{{errRel}}</div>
+            <form class="form-work" ng-submit="bc.release(releasingBook.idb, lat, lon, releasingBook.descript);">
+                <input type="text" class="form-work__item" ng-model="releasingBook.idb" placeholder="ID книги" required><div class="required req-area">*</div><br>
+                <input type="text" class="form-work__item" ng-model="releasingBook.descript" placeholder="Комментарий к местоположению"><br>
+                <textarea class="form-work__item_area" ng-model="releasingBook.loc" maxlength="300" placeholder="Описание местоположения" required>
+            </textarea><div class="required req-area">*</div><br>
+                <div class="form-work__btn_map" ng-click="mc.close = !mc.close">Указать на карте</div><div class="required req-area">*</div><br>
+                <button type="submit" class="form-work__btn">Отпустить книгу</button>
+            </form>
+            <div class="pop-up_overlay"  ng-hide="!mc.close">
+                <div class="pop-up_map">
+                    <i class="fa fa-times fa-2x close-pop-up" aria-hidden="true" ng-click="mc.closeMap();"></i>
+                    <ui-gmap-google-map center="mapWork.center" zoom="mapWork.zoom" control="mapWork.control" events="mapWork.events">
+                        <ui-gmap-marker ng-repeat="m in mapWork.markers" coords="m.coords" options="m.options" events="m.events"  icon="m.icon" idkey="m.id">
+                        </ui-gmap-marker>
+                    </ui-gmap-google-map>
+                    <button class="pop-up_map__btn" ng-click="mc.setPlace();">Подтвердить</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="wrapper-form_work">
+            <div class="wrapper-form_work__topic">Взять книгу</div>
+            <div class="success" ng-show="sucTake">{{sucTake}}</div>
+            <div class="messages" ng-show="errTake">{{errTake}}</div>
+            <form class="form-work" ng-submit="bc.take(takeBook.idb);">
+                <input type="text" class="form-work__item" ng-model="takeBook.idb" placeholder="ID книги" required><div class="required req-area">*</div><br>
+                <button type="submit" class="form-work__btn">Взять книгу</button>
+            </form>
+        </div>
+
+    </div><!--.wrap-in-wrapper-work-->
+
+</div> <!--.wrapper-work-->
+
+
