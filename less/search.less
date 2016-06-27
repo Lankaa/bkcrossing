@@ -1,0 +1,119 @@
+@import "var.less";
+
+.wrapper-search_super {
+  display: flex;
+  padding-bottom: 60px;
+  flex-direction: row;
+  margin: auto;
+  .wrapper-options {
+    margin: 30px;
+    &__caption {
+      color: @black;
+      font-size: 19px;
+      border-bottom: 2px solid @black;
+      padding-bottom: 4px;
+      font-family: @roboto;
+    }
+    .line_search {}
+    .search-form {
+      &__item,
+      &__item_select,
+      &__item_area {
+        margin: 10px 0;
+        padding: 0 5px;
+        width: @width-form;
+        border: none;
+        border-bottom: 1px solid #6d6d6d;
+        font-size: 16px;
+        background: transparent;
+        box-sizing: border-box;
+        resize: none;
+        outline: none;
+        height: 40px;
+      }
+      &__item_area {
+        padding: 10px 5px;
+      }
+      &__btn {
+        margin: 10px 0;
+        border: 1px solid @darkest-blue;
+        background: transparent;
+        font-family: @comfortaa;
+        cursor: pointer;
+        height: 32px;
+        border-radius: 5px;
+        outline: none;
+        width: @width-form;
+        font-size: 16px;
+        &:hover {
+          background: @blue;
+          color: @white;
+          border: none;
+          transition: all .3s linear;
+        }
+      }
+    }
+  }
+  .wrapper-data {
+    width: 500px;
+    background: @white;
+    .container-info_topic {
+      display: flex;
+      background: @darkest-blue;
+      height: 55px;
+      &__caption {
+        margin: auto;
+        color: @white;
+        text-align: center;
+        font-size: 18px;
+        font-family: @roboto;
+      }
+    }
+    &__plug {
+      margin: 0 auto;
+      text-align: center;
+      font-size: 17px;
+      font-family: @roboto;
+    }
+    .wrapper-info {
+      display: flex;
+      flex-direction: row;
+      border-bottom: 1px solid lightgrey;
+      align-items: center;
+      .container-img_search {
+        &__img {
+          width: 70px;
+          height: 70px;
+          padding: 10px 20px 10px 10px;
+        }
+      }
+      .container-info {
+        width: 300px;
+        &__title,
+        &__item {
+          font-family: @roboto;
+        }
+        &__title {
+          width: 90px;
+          display: inline-block;
+        }
+        &__item {}
+      }
+      .container-info_btn {
+        &__btn {
+          border: 1px solid;
+          outline: none;
+          background: transparent;
+          color: black;
+          padding: 10px;
+          border-radius: 5px;
+          &:hover {
+            background: @darkest-blue;
+            color: @white;
+            transition: all .3s linear;
+          }
+        }
+      }
+    }
+  }
+}

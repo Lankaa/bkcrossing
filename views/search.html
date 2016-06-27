@@ -1,0 +1,59 @@
+<div class="wrapper-search_super" ng-controller="SearchCtrl as sc">
+    <div class="wrapper-options">
+        <div class="wrapper-options__caption">Расширенный поиск</div>
+
+        <form class="search-form" ng-submit="sc.search();">
+            <input type="text" class="search-form__item" placeholder="IDB" ng-model="search.idb"><br>
+            <input type="text" class="search-form__item" placeholder="ISBN" ng-model="search.isbn"><br>
+            <input type="text" class="search-form__item" placeholder="Название" ng-model="search.name" ><br>
+            <input type="text" class="search-form__item" placeholder="Автор" ng-model="search.writer"><br>
+            <select class="search-form__item_select" ng-model="search.genre" ng-controller="ChooseCtrl as cc">
+                <option value="" selected disabled>Жанр</option>
+                <option ng-repeat="(key, value) in genre track by $index" >{{value}}</option>
+            </select><br>
+            <textarea class="search-form__item_area" placeholder="Описание" ng-model="search.descript" maxlength="255">
+            </textarea><br>
+            <button type="submit" class="search-form__btn">Искать!</button>
+        </form>
+    </div>
+    <div class="wrapper-data">
+        <div class="container-info_topic">
+            <span class="container-info_topic__caption">Найденные книги</span>
+        </div>
+        <div class="wrapper-data__plug" ng-show="searchMes" ng-bind="searchMes"></div>
+        <div class="wrapper-info" ng-repeat="s in searchSuc">
+            <div class="container-img_search">
+                <img src="../images/book_icon.png" class="container-img_search__img">
+            </div>
+            <div class="container-info">
+                <span class="container-info__title">ISBN:</span>
+                <span class="container-info__item" ng-bind="s.isbn"></span><br>
+
+                <span class="container-info__title">Название:</span>
+                <span class="container-info__item" ng-bind="s.name"></span><br>
+
+                <span class="container-info__title">Автор:</span>
+                <span class="container-info__item" ng-bind="s.writer"></span><br>
+
+                <span class="container-info__title">Жанр:</span>
+                <span class="container-info__item" ng-bind="s.genre"></span><br>
+
+                <span class="container-info__title">Описание:</span>
+                <span class="container-info__item" ng-bind="s.descript"></span><br>
+
+                <!--<span class="container-info__title">Город:</span>-->
+                <!--<span class="container-info__item" ng-bind="s.city"></span><br>-->
+
+                <!--<span class="container-info__title">Статус:</span>-->
+                <!--<span class="container-info__item" ng-bind="s.status"></span>-->
+            </div>
+
+            <!--<div class="container-info_btn">-->
+                <!--<button class="container-info_btn__btn" ng-click="bc.take(s.idb);">Взять книгу</button>-->
+            <!--</div>-->
+
+        </div>
+    </div>
+
+
+</div>

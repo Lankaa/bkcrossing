@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/styles-min.css">
+    <link rel="stylesheet" href="css/roboto.css">
+    <link rel="stylesheet" href="css/zantroke.css">
+    <link rel="stylesheet" href="css/comfortaa.css">
+    <link rel="stylesheet" href="css/djsans.css">
+    <link rel="stylesheet" href="css/theanodidot.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <title>E-Bookcrossing</title>
+</head>
+<body  ng-controller="UserCtrl as uc" ng-class="{active: $state.is('index')}">
+<div class="overlay" ng-class="{'darker-up': uc.switchUp, 'darker-in': uc.switchIn}" ng-hide="!$state.includes('index')"></div>
+<div class="main" ng-controller="BookCtrl as bc">
+    <div class="header" ng-class="{active: !$state.is('index')}">
+        <div class="wrapper-logo">
+            <a class="logo" ng-class="{active: !$state.is('index')}" ui-sref="index">E-Bookcrossing</a>
+        </div>
+        <div class="wrapper-menu" ng-controller="SearchCtrl as sc">
+            <ul class="menu">
+                <li class="menu__item">
+                    <a class="menu__item menu__item_link" ui-sref="index" ng-class="{allot: $state.is('index'), active: !$state.includes('index')}">Главная</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item menu__item_link" ui-sref="work" ng-class="{'pick-out': $state.is('work'), active: !$state.includes('index')}">Работа с книгами</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item menu__item_link" ui-sref="activity" ng-class="{'pick-out': $state.is('activity'), active: !$state.includes('index')}">Активность</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__item menu__item_link" ui-sref="about" ng-class="{'pick-out': $state.is('about'), active: !$state.includes('index')}">О нас</a>
+                </li>
+
+                <li><search $state="$state"></search></li>
+                <li><drop-down sign-out="uc.logout();" name="name" $state="$state" ng-hide="!name"></drop-down></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content" ui-view ng-controller="ChooseCtrl as cc">
+    </div>
+    <div class="footer" ng-hide="$state.is('index')">
+        <div class="copyright-container">
+            <span class="copyright">All Rights Reserved</span>
+            <a class="about-us" href="">API</a>
+        </div>
+    </div>
+</div>
+
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
+<script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+<!--<script src="js/script-min.js"></script>-->
+
+<script src="js/app.js"></script>
+<script src="js/slide-menu.js"></script>
+<script src="js/controllers/bookCtrl.js"></script>
+<script src="js/controllers/userCtrl.js"></script>
+<script src="js/controllers/searchCtrl.js"></script>
+<script src="js/controllers/mapCtrl.js"></script>
+<script src="js/controllers/chooseCtrl.js"></script>
+<script src="js/services/queryFactory.js"></script>
+<script src="js/services/getFactory.js"></script>
+<script src="js/directives/dropDir.js"></script>
+<script src="js/directives/searchDir.js"></script>
+<script src="js/directives/bodyDir.js"></script>
+</body>
+</html>

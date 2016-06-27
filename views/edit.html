@@ -1,0 +1,21 @@
+
+    <div class="wrapper-edit" ng-controller="UserCtrl as uc">
+        <span class="wrapper-edit__topic">Редактировать профиль</span>
+        <div class="success" ng-show="sucEdit">{{sucEdit}}</div>
+        <div class="messages" ng-show="errEdit">{{errEdit}}</div>
+        <form class="form-edit" name="edit" ng-submit="uc.edit(auth.lastName, auth.firstName, auth.city, auth.login, auth.email, editPass.pass)">
+            <input type="text" class="form-edit__item" placeholder="Фамилия" ng-model="auth.lastName"><br>
+            <input type="text" class="form-edit__item" placeholder="Имя" ng-model="auth.firstName"><br>
+            <select class="form-edit__item_select" ng-model="auth.city">
+                <option value="" selected disabled>Город</option>
+                <option ng-repeat="(key, value) in city track by $index" >{{value}}</option>
+            </select><br>
+            <input type="text" class="form-edit__item" placeholder="Login" ng-model="auth.login"><br>
+            <input type="text" class="form-edit__item" placeholder="Email" ng-model="auth.email"><br>
+            <!--<label><input type="password" class="form-edit__item" name="pass" maxlength="30" ng-minlength="6" placeholder="Пароль" ng-model="editPass.pass" required></label>-->
+            <!--<span class="error-edit" ng-show="edit.pass.$error.minlength">Недостаточно символов</span><br>-->
+            <!--<input type="password" class="form-edit__item" name="pass2" ng-model="editPass2" maxlength="30" placeholder="Повторите пароль" required><br>-->
+            <button type="submit" class="form-edit__btn">Редактировать</button>
+        </form>
+    </div>
+
