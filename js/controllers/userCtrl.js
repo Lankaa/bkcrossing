@@ -22,7 +22,9 @@ function UserCtrl($scope, QueryFactory, $state) {
     $scope.form = false;
     $scope.sign = {};
 
-    angular.element(document).ready( uc.auth );
+    if (localStorage.token) {
+        angular.element(document).ready( uc.auth );
+    }
 
     function edit(lastName, firstName, city, login, email, pass) {
         var url = 'http://api.bkcrossing.tk/v1/user/update';
