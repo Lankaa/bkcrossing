@@ -15,7 +15,7 @@ function BookCtrl($scope, $interval, QueryFactory, $timeout) {
     // bc.myBooks = myBooks;
 
     //      LOAD LAST RELEASE BOOKS
-    angular.element().ready( bc.lastReleased );
+    angular.element(document).ready( bc.lastReleased );
     $interval( function () {
         $timeout (function () {
             bc.lastReleased()
@@ -134,7 +134,7 @@ function BookCtrl($scope, $interval, QueryFactory, $timeout) {
     console.log($scope.lastMarkers);
 
     function parseMarkers(book) {
-        var markers = [];
+        var markers = [ ];
 
         for(var i in book){
             markers.push(parseMarker(book[i]));

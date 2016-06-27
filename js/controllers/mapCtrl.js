@@ -1,17 +1,9 @@
 angular
 .module('app')
-    .config(mapActConfig)
-    .config(mapWorkConfig)
+    .config(['uiGmapGoogleMapApiProvider', MapConfig])
     .controller('MapCtrl', ['$scope','uiGmapIsReady', MapCtrl]);
 
-function mapActConfig(uiGmapGoogleMapApiProvider) {
-    uiGmapGoogleMapApiProvider.configure({
-        key: 'AIzaSyC-oU23c5cX9AgO1UDvpD_SHZ84q9rFjLU',
-        v: '3.24', //defaults to latest 3.X anyhow
-        libraries: 'weather,geometry,visualization'
-    });
-}
-function mapWorkConfig(uiGmapGoogleMapApiProvider) {
+function MapConfig(uiGmapGoogleMapApiProvider) {
     uiGmapGoogleMapApiProvider.configure({
         key: 'AIzaSyC-oU23c5cX9AgO1UDvpD_SHZ84q9rFjLU',
         v: '3.24', //defaults to latest 3.X anyhow
@@ -20,7 +12,7 @@ function mapWorkConfig(uiGmapGoogleMapApiProvider) {
 }
 
 function MapCtrl($scope, uiGmapIsReady) {
-    mc = this;
+    var mc = this;
 
     mc.setPlace = setPlace;
     mc.closeMap = closeMap;
@@ -62,7 +54,7 @@ function MapCtrl($scope, uiGmapIsReady) {
                         },
                         options: { draggable: true },
                         events: {
-                            dragend: function (marker, eventName, args) {
+                            dragend: function (marker) {
                                 console.log('marker dragend');
                                 $scope.lat = marker.getPosition().lat();
                                 $scope.lon = marker.getPosition().lng();

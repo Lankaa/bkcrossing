@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>E-Bookcrossing</title>
 </head>
-<body  ng-controller="UserCtrl as uc" ng-class="{active: $state.is('index')}" body-dir>
+<body  ng-controller="UserCtrl as uc" ng-class="{active: $state.is('index')}">
 <div class="overlay" ng-class="{'darker-up': uc.switchUp, 'darker-in': uc.switchIn}" ng-hide="!$state.includes('index')"></div>
 <div class="main" ng-controller="BookCtrl as bc">
     <div class="header" ng-class="{active: !$state.is('index')}">
@@ -49,12 +49,15 @@
     </div>
 </div>
 
+<script src="bower_components/lodash/dist/lodash.min.js"></script>
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-<script src="bower_components/lodash/dist/lodash.min.js"></script>
 <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.min.js"></script>
 <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+
+<!--<script src="js/script-min.js"></script>-->
+
 <script src="js/app.js"></script>
 <script src="js/slide-menu.js"></script>
 <script src="js/controllers/bookCtrl.js"></script>
@@ -66,5 +69,6 @@
 <script src="js/services/getFactory.js"></script>
 <script src="js/directives/dropDir.js"></script>
 <script src="js/directives/searchDir.js"></script>
+<script src="js/directives/bodyDir.js"></script>
 </body>
 </html>

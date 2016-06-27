@@ -1,10 +1,10 @@
 angular
 .module('app')
-.controller('UserCtrl', ['$scope', 'QueryFactory', '$state', '$timeout', UserCtrl]);
+.controller('UserCtrl', ['$scope', 'QueryFactory', '$state', UserCtrl]);
 
-function UserCtrl($scope, QueryFactory, $state, $timeout) {
+function UserCtrl($scope, QueryFactory, $state) {
+    var uc = this;
     
-    uc = this;
     uc.edit = edit;
     uc.reg = reg;
     uc.auth = auth;

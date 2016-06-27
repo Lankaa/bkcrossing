@@ -26,8 +26,11 @@
             <form class="form-work" ng-submit="bc.release(releasingBook.idb, lat, lon, releasingBook.descript);">
                 <input type="text" class="form-work__item" ng-model="releasingBook.idb" placeholder="ID книги" required><div class="required req-area">*</div><br>
                 <input type="text" class="form-work__item" ng-model="releasingBook.descript" placeholder="Комментарий к местоположению"><br>
-                <textarea class="form-work__item_area" ng-model="releasingBook.loc" maxlength="300" placeholder="Описание местоположения" required>
+                <textarea class="form-work__item_area" ng-model="releasingBook.loc" maxlength="300" placeholder="Описание местоположения" ng-required="limitMarker">
             </textarea><div class="required req-area">*</div><br>
+                <div class="line-separator">
+                    <span class="line-separator__text">ИЛИ</span>
+                </div>
                 <div class="form-work__btn_map" ng-click="mc.close = !mc.close">Указать на карте</div><div class="required req-area">*</div><br>
                 <button type="submit" class="form-work__btn">Отпустить книгу</button>
             </form>

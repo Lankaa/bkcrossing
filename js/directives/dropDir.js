@@ -4,7 +4,7 @@
 
 angular
     .module('app')
-    .directive("dropDown", dropDown);
+    .directive('dropDown', dropDown);
 
 //Директива выпадающего меню
     function dropDown() {

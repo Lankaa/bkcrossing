@@ -4,7 +4,7 @@
 
 angular
     .module('app')
-    .factory('QueryFactory',['$http' , '$httpParamSerializer', QueryFactory]);
+    .factory('QueryFactory', ['$http', '$httpParamSerializer', QueryFactory]);
 
     function QueryFactory($http , $httpParamSerializer) {
         return {

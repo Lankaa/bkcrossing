@@ -1,9 +1,9 @@
 (function () {
     angular
         .module('app', ['ui.router', 'ngAnimate', 'uiGmapgoogle-maps'])
-        .config(config);
+        .config(['$stateProvider', '$urlRouterProvider', AppConfig]);
 
-        function config($stateProvider, $urlRouterProvider) {
+        function AppConfig($stateProvider, $urlRouterProvider) {
             
             $urlRouterProvider.otherwise('/home');
 
@@ -21,10 +21,7 @@
                 })
                 .state('activity', {
                     url: '/activity',
-                    templateUrl: 'views/activity.html',
-                    controller: function () {
-
-                    }
+                    templateUrl: 'views/activity.html'
                 })
                 .state('about', {
                     url: '/about',
