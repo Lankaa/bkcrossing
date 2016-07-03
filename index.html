@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="css/djsans.css">
     <link rel="stylesheet" href="css/theanodidot.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <title>E-Bookcrossing</title>
+    <title>Bookcrossing</title>
 </head>
 <body  ng-controller="UserCtrl as uc" ng-class="{active: $state.is('index')}">
 <div class="overlay" ng-class="{'darker-up': uc.switchUp, 'darker-in': uc.switchIn}" ng-hide="!$state.includes('index')"></div>
 <div class="main" ng-controller="BookCtrl as bc">
     <div class="header" ng-class="{active: !$state.is('index')}">
         <div class="wrapper-logo">
-            <a class="logo" ng-class="{active: !$state.is('index')}" ui-sref="index">E-Bookcrossing</a>
+            <a class="logo" ng-class="{active: !$state.is('index')}" ui-sref="index">Bookcrossing</a>
         </div>
         <div class="wrapper-menu" ng-controller="SearchCtrl as sc">
             <ul class="menu">
