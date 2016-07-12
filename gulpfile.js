@@ -14,7 +14,7 @@ var concat = require('gulp-concat');
 var filesize = require('gulp-filesize');
 
 
-gulp.task('default', ['styles', 'watch', 'ugly']);
+gulp.task('default', ['styles', 'watch']);
 
 gulp.task('styles',['minifycss'], wrapPipe(function(success, error){
     //noinspection JSUnresolvedFunction
