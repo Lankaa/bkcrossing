@@ -724,8 +724,20 @@ body.active {
   padding: 0 10px;
 }
 .main .content .wrapper-about {
-  margin: auto;
-  padding-bottom: 120px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding-bottom: 60px;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.main .content .wrapper-about .wrapper-describe {
+  width: 40%;
+  font-family: 'Roboto';
+  font-size: 20px;
 }
 .main .content .wrapper-edit {
   display: -ms-flexbox;
