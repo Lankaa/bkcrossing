@@ -95,7 +95,7 @@ function UserCtrl($scope, QueryFactory, $state) {
                             break;
                         }
                         case 404: {
-                            $scope.errLogin = 'Ошибка сервера';
+                            // $scope.errLogin = 'Ошибка сервера';
                             break;
                         }
                     }
