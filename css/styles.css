@@ -412,9 +412,9 @@ body.active {
   font-family: 'Comfortaa';
   height: 30px;
   border-radius: 4px;
+  outline: none;
   width: 275px;
   font-size: 16px;
-  outline: none;
 }
 .main .content .wrapper-form .sign-form .sign-form__btn:hover {
   transition: all .1s linear;
@@ -1013,16 +1013,15 @@ body.active {
   width: 275px;
   margin: 5px 0;
   font-family: 'Roboto';
+  color: #FFF;
 }
 .messages {
   border: 1px solid #00171F;
   background: #003459;
-  color: #FFF;
 }
 .success {
   border: 1px solid #007EA7;
   background: rgba(130, 207, 230, 0.25);
-  color: #000;
 }
 .error {
   color: white;
