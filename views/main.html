@@ -43,7 +43,7 @@
                 <i class="fa fa-times fa-2x wrapper-topic__close" aria-hidden="true" ng-click="uc.switchIn = false"></i>
             </div>
             <hr class="line">
-            <form name="signin" class="sign-form" ng-submit="uc.login()">
+            <form name="signin" class="sign-form" ng-submit="uc.login(sign.login, sign.password)">
                 <input class="sign-form__item" type="text" ng-model="sign.login" maxlength="30" placeholder="Логин" required><br>
                 <input class="sign-form__item" name="password" type="password" ng-model="sign.password" maxlength="30" placeholder="Пароль" ng-minlength="6" required><br>
                 <button class="sign-form__btn" type="submit" name="submit">Войти</button><br>

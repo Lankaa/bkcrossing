@@ -63,9 +63,9 @@ function UserCtrl($scope, QueryFactory, $state) {
                 switch (res.status){
                     case 201:
                         $scope.suc = 'Вы успешно зарегистрированы!';
+                        uc.login($scope.user.login, $scope.user.password);
                         $scope.user = {};
                         $scope.password1 = {};
-                        uc.login();
                         break;
                     case 400:
                         $scope.mes = 'Некорректные данные';
@@ -103,9 +103,12 @@ function UserCtrl($scope, QueryFactory, $state) {
         }
     }
 
-    function login() {
+    function login(login, pass) {
         var url = 'http://api.bkcrossing.tk/v1/user/signin';
-        var data = $scope.sign;
+        var data = {
+            login: login,
+            password: pass
+        };
 
         QueryFactory.promise(url, data)
             .then(function (res) {
