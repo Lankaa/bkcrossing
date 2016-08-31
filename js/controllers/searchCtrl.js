@@ -25,14 +25,14 @@ function SearchCtrl($scope, QueryFactory, $state) {
             switch (res.status) {
                 case 200:
                 {
+                    delete $scope.searchMes;
                     $scope.searchSuc = res.data;
-                    delete searchMes;
                     break;
                 }
                 case 204:
                 {
+                    delete $scope.searchSuc;
                     $scope.searchMes = 'Ничего не найдено!';
-                    delete searchSuc;
                     break;
                 }
             }
