@@ -1,1 +1,1 @@
-Welcome to Bookcrossing web repository
+Welcome to bkcrossing.tk web repository
