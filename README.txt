@@ -1,1 +1,10 @@
-Welcome to bkcrossing.tk web repository
+Diplomа work.
+
+Used technologies:
+
+JS
+AngularJS 1
+Less
+Gulp
+
+2016 year.
